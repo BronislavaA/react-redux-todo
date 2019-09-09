@@ -1,0 +1,59 @@
+#app {
+  border: 1px solid rgba(0,0,0,.125);
+  width: 500px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  margin: 0;
+  }
+
+form {
+  display: flex;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+[name~="submit"] {
+  width: 30%;
+  float: right;
+}
+
+[name~="input"] {
+  width: 70%;
+  float: left;
+}
+
+input {
+  flex: auto;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+li {
+  position: relative;
+  display: block;
+  padding: .75rem 1.25rem;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,.125);
+}
+
+[type~="checkbox"] {
+  margin-right: 20px;
+}
+
+button {
+  background-color: inherit;
+  cursor: pointer;
+  float: right;
+  background-color: #dfdfdf;
+}
