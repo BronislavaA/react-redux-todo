@@ -6,6 +6,7 @@ class Todo extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      id: this.props.id,
       text: this.props.text,
       checked: this.props.checked,
       deleted: this.props.deleted
@@ -22,23 +23,18 @@ class Todo extends React.Component {
   handleDelete() {
     this.props.dispatch(deleteTodo(this.props.id))
     this.setState({
-      deleted: !this.props.deleted
+      deleted: !this.props.deleted,
+      id: !this.props.id
     })
   }
 
   render() {
     return (
-      <ul>
-        <li>
-          <input
-            type="checkbox"
-            checked={this.state.checked}
-            onChange={this.handleCheck}
-          />
-          {this.state.text}
-          <button deleted={this.state.deleted} onClick={this.handleDelete}>X</button>
-        </li>
-      </ul>
+      <li>
+        <input id={this.state.id} type="checkbox" checked={this.state.checked} onChange={this.handleCheck} />
+        <label for={this.state.id}>{this.state.text}</label>
+        <button deleted={this.state.deleted} onClick={this.handleDelete}>X</button>
+      </li>
     )
   }
 }

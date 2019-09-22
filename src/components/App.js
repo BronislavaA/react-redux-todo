@@ -3,10 +3,16 @@ import AddTodo from '../containers/AddTodo'
 import List from '../containers/ListFilter'
 
 const App = () => (
-  <div>
-    <h2>To Do List</h2>
-    <AddTodo />
-    <List />
+  <div className="app">
+    <div className="card">
+      <div className="card-header">
+        <h1>To Do List</h1>
+      </div>
+      <div className="card-content">
+        <List />
+        <AddTodo />
+      </div>
+    </div>
   </div>
 )
 

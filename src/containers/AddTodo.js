@@ -28,10 +28,10 @@ class AddTodo extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <div className="addTodo">
         <input name="input" type="text" value={this.state.text} onChange={this.handleChange} />
-        <input name="submit" type="submit" value="Add" />
-      </form>
+        <button name="submit" type="button" onClick={this.handleSubmit}>Add</button>
+      </div>
     );
   }
 }

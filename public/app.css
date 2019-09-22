@@ -1,59 +1,117 @@
-#app {
-  border: 1px solid rgba(0,0,0,.125);
-  width: 500px;
-  margin: auto;
-}
-
-h2 {
-  text-align: center;
-  padding-bottom: 15px;
-  padding-top: 15px;
-  margin: 0;
-  }
-
-form {
+.app {
   display: flex;
-  padding-left: 15px;
-  padding-right: 15px;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
 }
 
-[name~="submit"] {
+.card {
   width: 30%;
-  float: right;
+  border-radius: 25px;
+  border: 1px solid #acacac;
+  align-self: stretch;
+  background: linear-gradient(54deg, rgb(147, 249, 184) 0%, rgb(99, 229, 240) 100%);
+  overflow: auto;
 }
 
-[name~="input"] {
-  width: 70%;
-  float: left;
+.card-header {
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  border: 1px solid rgba(0,0,0,.125);
+  text-align: center;
+  background: linear-gradient(360deg, hsl(187.5, 63.4%, 67.8%) 0%, hsla(128.08, 0%, 100%, 0) 100%), linear-gradient(190deg, hsl(180, 100%, 50%) 0%, hsla(180, 100%, 50%, 0) 100%), linear-gradient(230deg, hsl(136.7, 65.7%, 34.3%) 32%, hsla(136.7, 65.71%, 34.31%, 0) 16%), linear-gradient(300deg, hsl(148.7, 73.6%, 17.8%) 40%, hsla(148.57, 73.4%, 17.84%, 0) 17%), linear-gradient(34deg, hsl(136.7, 65.7%, 34.3%) 42%, hsla(136.63, 65.74%, 34.23%, 0) 13%), linear-gradient(126deg, hsl(148.6, 98.1%, 21%) 100%, hsla(148.43, 98.12%, 20.91%, 0) 0%);
 }
 
-input {
-  flex: auto;
+.card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.addTodo {
+  display: flex;
+  padding: 8px 16px
+}
+
+input[type~=text] {
+  flex: 70%;
+  border: none;
+  border-bottom: 1px solid #6fc5dd;
+  padding: 8px 16px;
+  background-color: transparent;
+}
+
+.addTodo button[type~=button] {
+  flex: 30%;
+  border: none;
+  background-color: #6fc5dd;
 }
 
 ul {
   display: flex;
   flex-direction: column;
-  padding-left: 0;
-  margin-bottom: 0;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 li {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+input[type~="checkbox"] {
+  opacity: 0
+}
+
+input[type="checkbox"] + label::after {
+  content: none;
+}
+
+input[type="checkbox"]:checked + label::after {
+  content: "";
+}
+
+li label {
+  margin: 0;
+  flex-grow: 1;
   position: relative;
-  display: block;
-  padding: .75rem 1.25rem;
-  margin-bottom: -1px;
-  background-color: #fff;
-  border: 1px solid rgba(0,0,0,.125);
+  padding-left: 30px;
+  word-wrap: break-word;
 }
 
-[type~="checkbox"] {
-  margin-right: 20px;
+li label::before, li label::after {
+  position: absolute;
+  content: "";
 }
 
-button {
-  background-color: inherit;
+li label::before{
+  height: 16px;
+  width: 16px;
+  border: 1px solid;
+  top: 0px;  
+  left: 0px; 
+}
+
+li label::after {
+  height: 5px;
+  width: 9px;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  transform: rotate(-45deg);
+  left: 4px;
+  top: 4px;
+}
+
+ul button {
+  background-color: transparent;
+  padding: 8px 16px;
   cursor: pointer;
   float: right;
-  background-color: #dfdfdf;
+  border: none;
+}
+
+button:hover {
+  background-color: #6fc5dd;
 }
